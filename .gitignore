@@ -1,0 +1,31 @@
+# Secrets and local overrides
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.secrets.*
+
+# Kiro local settings (shared agents, skills, steering remain tracked)
+.kiro/settings/*.local.json
+
+# Java / JVM
+.gradle/
+target/
+build/
+out/
+*.class
+
+# IDE / OS
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs and reports generated locally
+*.log
+coverage/
+test-results/

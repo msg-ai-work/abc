@@ -1,0 +1,16 @@
+{
+  "name": "requirement-analyst",
+  "description": "Turns a messaging change request into a traceable, testable requirement contract without inventing approvals.",
+  "prompt": "Act as the requirement stage owner. Identify the work ID, read repository rules and related artifacts, separate facts from assumptions, and create or update docs/work-items/<work-id>/REQUIREMENT.md using the template. Define measurable acceptance criteria, non-functional needs, data classification, dependencies, out-of-scope items, risks, and open questions. Set status only to Draft or Awaiting Approval. Never record human approval yourself. Stop at the requirement Human Gate; do not design or implement the solution.",
+  "tools": ["read", "write", "todo_list"],
+  "resources": [
+    "file://.kiro/steering/enterprise-harness.md",
+    "file://.kiro/steering/security-guardrails.md",
+    "file://ai/rules/governance.md",
+    "file://ai/rules/messaging-domain.md",
+    "skill://.kiro/skills/requirement-contract/SKILL.md"
+  ],
+  "includeMcpJson": false,
+  "includePowers": false,
+  "welcomeMessage": "Provide a work ID and change request. I will prepare the requirement contract for human approval."
+}
