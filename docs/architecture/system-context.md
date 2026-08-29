@@ -1,33 +1,33 @@
-# AI Harness System Context
+# AI Harness 시스템 컨텍스트
 
-## Purpose
+## 목적
 
-The harness connects policy authority, domain delivery, Kiro Agents, Git/PR, CI, and protected release operations without granting AI production access.
+AI Harness는 AI에 운영 환경 직접 접근 권한을 부여하지 않으면서 Policy Authority, Domain Engineering, Kiro Agent, Git/PR, CI, 보호된 Release Operation을 하나의 통제된 흐름으로 연결한다.
 
 ```mermaid
 flowchart LR
-    PA[Policy Authority\nstandards and approvals] --> GIT[(Git SSOT)]
-    DE[Domain Engineering\nrequirements and code] --> GIT
-    K[Kiro Agents\nexecute staged skills] <--> GIT
-    GIT --> PR[Protected PR\nAI first review + human final review]
-    PR --> CI[CI\nbuild test contract and policy checks]
-    CI --> ART[Immutable artifact\nand evidence]
-    ART --> CD[Protected CD environment\nhuman authorization]
+    PA[Policy Authority\n표준과 승인] --> GIT[(Git SSOT)]
+    DE[Domain Engineering\n요구사항과 코드] --> GIT
+    K[Kiro Agents\n단계별 Skill 수행] <--> GIT
+    GIT --> PR[Protected PR\nAI 1차 리뷰 + 사람 최종 리뷰]
+    PR --> CI[CI\nBuild·Test·Contract·Policy 검증]
+    CI --> ART[Immutable Artifact\n및 검증 증적]
+    ART --> CD[Protected CD Environment\n사람의 승인]
     CD --> PROD[Production]
-    OPS[Authorized operator] --> CD
-    K -. no credentials or direct access .-> PROD
+    OPS[Authorized Operator] --> CD
+    K -. 자격증명 및 직접 접근 없음 .-> PROD
 ```
 
-## Trust boundaries
+## 신뢰 경계
 
-- Kiro Agents operate on the checked-out workspace and explicitly loaded repository resources.
-- Agent profiles exclude workspace MCP and installed Powers by default to avoid undeclared external data paths.
-- CI uses read/test permissions and non-production dependencies.
-- Protected branches and environments enforce human approvals and separation of duties.
-- Production credentials are resolved only by the approved CD platform/operator and never enter Git or Agent context.
+- Kiro Agent는 Checkout된 Workspace와 명시적으로 Load된 저장소 Resource 범위에서 동작한다.
+- 선언되지 않은 외부 데이터 경로 사용을 방지하기 위해 Agent Profile은 기본적으로 Workspace MCP와 설치된 Powers를 제외한다.
+- CI는 읽기/테스트 수준의 권한과 비운영 환경 Dependency만 사용한다.
+- Protected Branch와 Protected Environment를 통해 사람의 승인과 역할 분리를 강제한다.
+- 운영 자격증명은 승인된 CD Platform 또는 Operator에 의해서만 해석되며 Git이나 Agent Context에 포함되지 않는다.
 
-## Contract chain
+## 문서 계약 체인
 
-`REQUIREMENT.md` → `impact-analysis.md` + `implementation-plan.md` → code/evidence → `test-report.md` → `review-report.md` → `release-record.md`.
+`REQUIREMENT.md` → `impact-analysis.md` + `implementation-plan.md` → 코드/증적 → `test-report.md` → `review-report.md` → `release-record.md`
 
-Every arrow is a file-backed handoff. Requirement, plan, PR, and deployment gates require human evidence. Conversation history is convenient context, not durable authority.
+각 화살표는 Git에 저장된 문서를 통한 업무 인계를 의미한다. 요구사항, 계획, PR, 배포 Gate에는 사람의 승인 증적이 필요하다. 대화 기록은 참고 컨텍스트일 뿐 지속 가능한 승인 근거나 SSOT가 아니다.
