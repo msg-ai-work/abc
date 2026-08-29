@@ -1,8 +1,8 @@
-# Domain Skills
+# 도메인 Skills
 
 이 디렉터리는 미디어로그 기업메시징 업무의 실제 노하우를 AI가 재사용할 수 있는 Skill로 관리한다.
 
-## Ownership
+## 담당 영역
 
 - `engine/`: 엔진 담당 팀원
 - `tech-support-client/`: 기술지원(발송클라이언트) 담당 팀원
