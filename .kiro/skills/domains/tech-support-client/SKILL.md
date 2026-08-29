@@ -5,7 +5,7 @@ owner-role: tech-support-client-domain-owner
 version: "0.1"
 ---
 
-# 기술지원(발송클라이언트) Domain Skill
+# 기술지원(발송클라이언트) 도메인 Skill
 
 ## 적용 범위
 
