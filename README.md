@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/images/ai-native-target-architecture.png" alt="U+ × 미디어로그 공동 AI Native 개발환경 목표 아키텍처" width="100%" />
-</p>
-
 # Enterprise Messaging AI Harness
 
 기업메시징 업무를 **AI가 반복적으로 지원할 수 있는 개발·운영 체계**로 만들기 위한 Kiro 기반 AI Harness 저장소입니다.
@@ -9,6 +5,10 @@
 단순히 AI에게 코드를 작성시키는 것이 목적이 아니라, 요구사항 분석부터 설계, 구현, 테스트, 리뷰, 배포 준비, 운영 대응까지의 업무 절차를 **Agent + Workflow + Rule + Skill**로 표준화하고 Git에서 함께 관리하는 것을 목표로 합니다.
 
 > **AI를 잘 쓰는 단계를 넘어, AI가 일할 수 있는 환경을 만드는 단계로 전환한다.**
+
+<p align="center">
+  <img src="docs/images/ai-native-target-architecture.png" alt="U+ × 미디어로그 공동 AI Native 개발환경 목표 아키텍처" width="100%" />
+</p>
 
 ---
 
