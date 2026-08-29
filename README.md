@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/ai-native-target-architecture.png" alt="U+ × 미디어로그 공동 AI Native 개발환경 목표 아키텍처" width="100%" />
+</p>
+
 # Enterprise Messaging AI Harness
 
 기업메시징 업무를 **AI가 반복적으로 지원할 수 있는 개발·운영 체계**로 만들기 위한 Kiro 기반 AI Harness 저장소입니다.
@@ -346,86 +350,41 @@ AI는 다음 업무를 독단적으로 수행하지 않습니다.
 - 운영 데이터 임의 수정
 - 장애 위험 수용 결정
 - 보안 예외 승인
-- PR 최종 Merge 판단
-- 고객 개인정보 / 인증정보 외부 전송
+- 보호 브랜치 Merge 승인
 
-기본 원칙:
-
-> **AI executes, humans decide.**
-
-AI는 분석·구현·검증·리뷰 초안을 수행하고, 중요한 결정과 책임은 사람이 담당합니다.
+이런 결정은 반드시 사람이 수행합니다.
 
 ---
 
-## 11. Git을 SSOT로 사용
+## 11. AI-ABC와의 연결
 
-이 저장소의 `main` Branch를 AI Harness의 **Single Source of Truth**로 사용합니다.
-
-Git에서 관리할 대상:
-
-- Harness
-- Agent
-- Workflow
-- Rule / Guardrail
-- Domain Skill
-- 요구사항
-- 설계 및 ADR
-- Test 결과
-- PR Review 결과
-- Release / Rollback 기록
-- 운영 Runbook
-
-대화 기록이나 특정 개인의 로컬 환경이 기준이 되지 않도록 합니다.
-
----
-
-## 12. 권장 KPI
-
-| 영역 | KPI 예시 |
-|---|---|
-| 운영 | MTTR, 반복 문의 처리시간, 수동 점검시간, 장애 재발률 |
-| 개발 | 요구사항→PR Lead Time, Review Time, 재작업률, 결함 유출률 |
-| Skill | 사용 횟수, 재사용률, 수정 횟수, 최신화 경과일 |
-| Harness | Human Touch Time, 자동화율, Change Failure Rate |
-
-목표는 **AI가 만든 코드의 양**이 아니라 **운영과 개발 과정에서 사람이 쓰는 시간과 반복 작업을 줄이는 것**입니다.
-
----
-
-## 13. 시작하기
-
-작업은 추적 가능한 Work ID를 기준으로 진행합니다.
-
-예:
-
-```text
-MSG-1234
-```
-
-작업 산출물은 다음 위치를 기본으로 사용합니다.
-
-```text
-docs/work-items/MSG-1234/
-```
-
-Harness 구조와 세부 실행 방법은 [`HARNESS.md`](HARNESS.md)를 참고합니다.
-
-팀 Skill 운영 기준은 [`docs/team-skill-governance.md`](docs/team-skill-governance.md)를 참고합니다.
-
----
-
-## 방향
-
-이 저장소는 완성된 AI 시스템을 보관하는 곳이 아니라, **팀의 업무 경험이 쌓일수록 계속 성장하는 AI 업무 시스템**을 만드는 공간입니다.
+이 저장소는 AX채널개발팀의 **AI-ABC** 방향과 연결됩니다.
 
 ```text
 Automation
-    ↓
+   ↓
+반복 업무 자동화
+
 Boost
-    ↓
+   ↓
+개발·운영 생산성 향상
+
 Creation
-    ↓
-AI Native
+   ↓
+AI Harness와 Agent 기반의 새로운 업무 방식 창출
 ```
 
-**사람이 AI에 매번 업무를 설명하는 방식에서, 팀의 업무 방식 자체를 AI가 이해하고 실행할 수 있는 구조로 발전시키는 것이 최종 목표입니다.**
+AI Harness는 결국 **Automation → Boost → Creation**의 실행 기반입니다.
+
+---
+
+## 12. 목표
+
+이 저장소의 최종 목표는 AI Tool 도입 자체가 아닙니다.
+
+> 개인의 경험을 팀의 Skill로 만들고,
+> Git을 SSOT로 사용하며,
+> Agent가 반복적으로 재사용하게 하고,
+> 사람이 중요한 판단과 승인에 집중할 수 있는 개발·운영 환경을 만드는 것입니다.
+
+**AI를 사용하는 팀에서 AI가 일할 수 있는 팀으로 전환합니다.**
