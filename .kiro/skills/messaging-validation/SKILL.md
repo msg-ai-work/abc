@@ -1,32 +1,32 @@
 ---
 name: messaging-validation
-description: Validate enterprise messaging behavior and create a reproducible test report. Use after implementation or when evaluating reliability, compatibility, and performance risk.
+description: 기업메시징 동작을 검증하고 재현 가능한 테스트 보고서를 작성한다. 구현 완료 후 또는 신뢰성, 호환성, 성능 위험을 평가할 때 사용한다.
 metadata:
   owner: quality
   version: "1.0"
 ---
 
-# Messaging Validation
+# 메시징 검증
 
-Use `templates/test-report.md`. Never claim a check that was not run.
+`templates/test-report.md`를 사용한다. 실제로 수행하지 않은 점검을 수행했다고 기록하지 않는다.
 
-## Coverage selection
+## 검증 범위 선정
 
-Map every acceptance criterion and design risk to one or more of:
+모든 수용 기준과 설계 위험을 다음 중 하나 이상에 매핑한다.
 
-- unit/state-transition tests;
-- API schema, status, validation, compatibility, timeout, and idempotency checks;
-- producer/consumer serialization and contract checks;
-- broker integration for key/partition, retries, duplicates, DLQ, replay, and rebalancing;
-- Redis TTL, atomicity, eviction, and deduplication checks;
-- database constraint, transaction, locking, migration, and rollback checks;
-- dependency timeout, partial outage, throttling, and recovery checks;
-- concurrency, ordering, TPS, latency percentiles, resource saturation, and backpressure checks.
+- Unit/상태 전이 테스트
+- API Schema, Status, Validation, Compatibility, Timeout, Idempotency 점검
+- Producer/Consumer 직렬화 및 계약 점검
+- Broker 통합 점검: Key/Partition, Retry, Duplicate, DLQ, Replay, Rebalancing
+- Redis TTL, Atomicity, Eviction, Deduplication 점검
+- Database Constraint, Transaction, Locking, Migration, Rollback 점검
+- Dependency Timeout, 부분 장애, Throttling, Recovery 점검
+- 동시성, 순서보장, TPS, Latency Percentile, Resource Saturation, Backpressure 점검
 
-## Evidence rules
+## 증적 규칙
 
-For each command record UTC time, environment, command, exit code, observed result, and evidence location. Use synthetic non-sensitive test data. Distinguish Pass, Fail, Blocked, and Not Run. A missing environment or dependency is Blocked, not Pass.
+각 명령에 대해 UTC 시간, 환경, 명령어, 종료 코드, 관찰 결과, 증적 위치를 기록한다. 민감정보가 없는 합성 테스트 데이터를 사용한다. 결과는 Pass, Fail, Blocked, Not Run으로 구분한다. 환경이나 의존성이 없어 수행할 수 없는 경우는 Pass가 아니라 Blocked로 기록한다.
 
-## Exit criteria
+## 종료 기준
 
-Summarize acceptance coverage, regression scope, failures, untested risks, and recommended disposition. Only a human may accept residual risk or waive a failed mandatory check.
+수용 기준 커버리지, 회귀 범위, 실패 항목, 미검증 위험, 권고 결론을 요약한다. 잔여 위험을 수용하거나 필수 실패 항목을 면제할 수 있는 주체는 사람뿐이다.
