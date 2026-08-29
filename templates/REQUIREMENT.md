@@ -1,91 +1,91 @@
-# Requirement Contract
+# 요구사항 계약서
 
 - **Work ID:** `<WORK-ID>`
-- **Title:** `<concise title>`
+- **제목:** `<간결한 제목>`
 - **Status:** `Draft`
-- **Risk:** `<Low | Medium | High>`
-- **Owner:** `<human owner>`
-- **Last updated (UTC):** `<YYYY-MM-DDTHH:mm:ssZ>`
+- **위험도:** `<Low | Medium | High>`
+- **Owner:** `<사람 책임자>`
+- **최종 수정 시각 (UTC):** `<YYYY-MM-DDTHH:mm:ssZ>`
 
-## Approval record — G1
+## 승인 기록 — G1
 
-> AI must not populate human approval fields.
+> AI는 사람의 승인 필드를 직접 작성해서는 안 된다.
 
-- **Decision:** `<Pending | Approved | Rejected>`
-- **Approver:** `<human identity>`
-- **Approved version/commit:** `<immutable reference>`
-- **Timestamp (UTC):** `<YYYY-MM-DDTHH:mm:ssZ>`
-- **Evidence:** `<ticket/PR/meeting reference>`
+- **결정:** `<Pending | Approved | Rejected>`
+- **승인자:** `<사람 식별자>`
+- **승인 버전/Commit:** `<변경 불가능한 참조>`
+- **승인 시각 (UTC):** `<YYYY-MM-DDTHH:mm:ssZ>`
+- **증적:** `<Ticket/PR/회의 참조>`
 
-## Provenance
+## 출처 및 근거
 
-| Requirement/source | Reference | Fact, assumption, or open question |
+| 요구사항/출처 | 참조 | 사실, 가정 또는 미해결 질문 |
 |---|---|---|
-| `<request>` | `<immutable link or path>` | `<type>` |
+| `<요청>` | `<변경 불가능한 링크 또는 경로>` | `<유형>` |
 
-## Problem and outcome
+## 문제와 목표
 
-### Current behavior
-`<observable current state>`
+### 현재 동작
+`<관찰 가능한 현재 상태>`
 
-### Desired outcome
-`<business/user outcome, not solution>`
+### 기대 결과
+`<구현 방법이 아닌 비즈니스/사용자 관점의 기대 결과>`
 
-### Scope
-- In: `<included behavior/systems>`
-- Out: `<explicit exclusions>`
+### 범위
+- 포함: `<포함되는 동작/시스템>`
+- 제외: `<명시적으로 제외되는 범위>`
 
-## Message semantics
+## 메시지 처리 의미
 
-- Acceptance durability boundary: `<validated | persisted | published | delivered | n/a>`
-- Lifecycle/state transitions: `<states and terminal states>`
-- Delivery guarantee: `<at-most-once | at-least-once | proven end-to-end guarantee>`
-- Idempotency/deduplication: `<key, scope, conflict behavior, retention>`
-- Ordering/partition key: `<requirement or n/a>`
-- Timeout/retry/DLQ/replay: `<bounded requirement or n/a>`
-- Transaction/cache/database boundary: `<requirement or n/a>`
+- 수락 내구성 경계: `<validated | persisted | published | delivered | n/a>`
+- 생명주기/상태 전이: `<상태와 종료 상태>`
+- 전달 보장 수준: `<at-most-once | at-least-once | proven end-to-end guarantee>`
+- 멱등성/중복 제거: `<Key, 범위, 충돌 동작, 보관 기간>`
+- 순서 보장/Partition Key: `<요구사항 또는 n/a>`
+- Timeout/Retry/DLQ/Replay: `<제한 조건 또는 n/a>`
+- Transaction/Cache/Database 경계: `<요구사항 또는 n/a>`
 
-## Acceptance criteria
+## 인수 기준
 
-| ID | Given | When | Then / measurable evidence | Priority |
+| ID | Given | When | Then / 측정 가능한 증적 | 우선순위 |
 |---|---|---|---|---|
-| AC-1 | `<precondition>` | `<action/event>` | `<observable result>` | `<Must/Should>` |
+| AC-1 | `<사전 조건>` | `<행위/이벤트>` | `<관찰 가능한 결과>` | `<Must/Should>` |
 
-## Non-functional requirements
+## 비기능 요구사항
 
-| Area | Requirement / threshold | Measurement |
+| 영역 | 요구사항 / 임계값 | 측정 방법 |
 |---|---|---|
-| TPS and burst | `<value or TBD>` | `<method>` |
-| Latency | `<p95/p99 threshold or TBD>` | `<method>` |
-| Availability/recovery | `<SLO/RTO/RPO or n/a>` | `<method>` |
-| Compatibility | `<API/event/data constraints>` | `<method>` |
-| Observability | `<metrics/logs/traces/alerts>` | `<method>` |
+| TPS 및 Burst | `<값 또는 TBD>` | `<방법>` |
+| Latency | `<p95/p99 기준 또는 TBD>` | `<방법>` |
+| 가용성/복구 | `<SLO/RTO/RPO 또는 n/a>` | `<방법>` |
+| 호환성 | `<API/Event/Data 제약>` | `<방법>` |
+| 관측성 | `<Metric/Log/Trace/Alert>` | `<방법>` |
 
-## Security, privacy, and compliance
+## 보안, 개인정보 및 컴플라이언스
 
-- Data classification and fields: `<classification; no raw sensitive samples>`
-- Authentication/authorization/tenant boundary: `<requirements>`
-- Logging, retention, deletion, audit: `<requirements>`
-- Secret and external-data boundary: `<requirements>`
+- 데이터 분류 및 필드: `<분류; 민감정보 원문 샘플 금지>`
+- 인증/인가/Tenant 경계: `<요구사항>`
+- Logging, 보관, 삭제, Audit: `<요구사항>`
+- Secret 및 외부 데이터 경계: `<요구사항>`
 
-## Dependencies and ownership
+## 의존성과 책임
 
-| System/team | Contract or dependency | Owner | Failure impact |
+| 시스템/팀 | 계약 또는 의존성 | Owner | 장애 영향 |
 |---|---|---|---|
-| `<name>` | `<API/topic/DB/etc.>` | `<human/team>` | `<impact>` |
+| `<이름>` | `<API/Topic/DB 등>` | `<사람/팀>` | `<영향>` |
 
-## Assumptions, constraints, and open questions
+## 가정, 제약사항 및 미해결 질문
 
-- A-1: `<assumption and validation owner>`
-- Q-1: `<question, owner, due date>`
+- A-1: `<가정과 검증 책임자>`
+- Q-1: `<질문, Owner, 기한>`
 
-## Initial risks
+## 초기 위험
 
-| Risk | Likelihood/impact | Mitigation/decision owner |
+| 위험 | 발생 가능성/영향도 | 완화 방안/의사결정 책임자 |
 |---|---|---|
-| `<risk>` | `<L/M/H>` | `<control/owner>` |
+| `<위험>` | `<L/M/H>` | `<통제/Owner>` |
 
-## Traceability
+## 추적성
 
-- Related ADR/schema/runbook: `<paths>`
-- Success KPI: `<Lead Time, quality, defect/rework, etc.>`
+- 관련 ADR/Schema/Runbook: `<경로>`
+- 성공 KPI: `<Lead Time, 품질, 결함/재작업 등>`
