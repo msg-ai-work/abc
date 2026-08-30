@@ -1,14 +1,22 @@
-# AI Harness 공통 영역: 팀장(저장소 관리자) 승인
+# Common AI Harness / Control Plane
+# GitHub Team 생성 전까지 저장소 관리자인 @choiss7을 임시 Owner로 사용한다.
+
+* @choiss7
+
 /HARNESS.md @choiss7
+/README.md @choiss7
 /ai/rules/ @choiss7
 /ai/workflows/ @choiss7
 /.kiro/agents/ @choiss7
 /.kiro/steering/ @choiss7
+/.kiro/skills/ @choiss7
 /templates/ @choiss7
 /scripts/ @choiss7
+/docs/governance/ @choiss7
 
-# Domain Skill은 담당 팀원이 작성하고 PR로 반영한다.
-# 실제 팀원 GitHub 계정이 확정되면 아래 @domain-owner를 담당자 계정으로 교체한다.
-/.kiro/skills/domains/engine/ @choiss7
-/.kiro/skills/domains/tech-support-client/ @choiss7
-/.kiro/skills/domains/web/ @choiss7
+# Domain 업무 지식의 SSOT는 별도 Repository이다.
+# - msg-ai-work/abc-engine
+# - msg-ai-work/abc-web
+# - msg-ai-work/abc-tech-support
+# - msg-ai-work/abc-projects
+# 기존 .kiro/skills/domains/* 는 Migration 호환용 Deprecated Stub만 유지한다.
