@@ -2,7 +2,8 @@
 name: safe-release
 description: 운영 배포를 직접 실행하지 않고 감사 가능한 기업메시징 릴리스 및 롤백 기록을 준비한다.
 metadata:
-  owner: release-management
+  responsible-role: 리더
+  reviewer-role: Reviewer
   version: "1.0"
 ---
 
