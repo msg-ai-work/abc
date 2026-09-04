@@ -2,7 +2,8 @@
 name: requirement-contract
 description: 추적 가능한 기업메시징 요구사항 계약을 작성한다. 기능, 버그, 정책, 운영 변경을 설계나 구현 전에 명확히 해야 할 때 사용한다.
 metadata:
-  owner: governance
+  responsible-role: 리더
+  reviewer-role: Reviewer
   version: "1.0"
 ---
 
