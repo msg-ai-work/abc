@@ -19,7 +19,7 @@
 ```text
                          msg-ai-work/abc
                      COMMON AI HARNESS / HUB
-                         [팀장 관리]
+                         [리더 관리]
                               │
           Agent / Workflow / Rule / Guardrail / Template
                               │
@@ -46,7 +46,7 @@
 
 핵심 원칙은 간단합니다.
 
-> **팀장은 AI가 일하는 방법을 관리하고, 업무 담당자는 AI가 알아야 할 업무를 관리한다.**
+> **리더는 AI가 일하는 방법을 관리하고, 담당자는 AI가 알아야 할 업무 지식을 관리하며, Reviewer는 변경의 품질과 안전성을 검증한다.**
 
 ---
 
@@ -54,7 +54,7 @@
 
 | Repository | 역할 | 주요 관리 주체 | 주요 자산 |
 |---|---|---|---|
-| **`msg-ai-work/abc`** | Common Harness / Control Plane | 팀장 | Agent, Workflow, Rule, Guardrail, Template, Governance |
+| **`msg-ai-work/abc`** | Common Harness / Control Plane | 리더 | Agent, Workflow, Rule, Guardrail, Template, Governance |
 | **`msg-ai-work/abc-engine`** | Engine Domain | 엔진 담당자 | SMS/MMS/RCS GW, Kafka, TPS, 장애·배포 Skill |
 | **`msg-ai-work/abc-web`** | Web Domain | 웹 담당자 | FE/BE/API/Auth/DB, 웹 운영·개발 Skill |
 | **`msg-ai-work/abc-tech-support`** | Technical Support Domain | 기술지원 담당자 | 발송 Client 설치·연동·로그·장애 Skill |
@@ -162,20 +162,26 @@ ref: v1.0.0
 
 ---
 
-## 6. 팀장과 Domain Owner 역할
+## 6. 리더 / 담당자 / Reviewer 역할
 
-| 구분 | 팀장 / Common Owner | Domain Owner / 담당 팀원 |
-|---|---|---|
-| Harness Architecture | 설계·승인 | 의견·피드백 |
-| Agent | 관리 | 활용 |
-| Workflow | 관리 | 업무 적용·개선 제안 |
-| Rule / Guardrail | 최종 기준 관리 | 변경 제안 |
-| Domain Skill | 구조·품질 기준 | **작성·개선 Owner** |
-| Runbook / Knowledge | 기준 제시 | **작성·최신화** |
-| Eval | 공통 기준 | Domain Case 작성 |
-| Production | Human Gate 유지 | 검증 증적 제공 |
+| 구분 | 리더 | 담당자 | Reviewer |
+|---|---|---|---|
+| Harness Architecture | 설계·최종 기준 관리 | 의견·업무 적용 | 구조·일관성 검토 |
+| Agent | 공통 Agent 관리 | 활용·개선 제안 | 변경 영향 검토 |
+| Workflow | 공통 Workflow 관리 | 업무 적용·개선 제안 | 흐름·예외 케이스 검토 |
+| Rule / Guardrail | 최종 기준 관리 | 준수·변경 제안 | 보안·품질·운영 영향 검증 |
+| Domain Skill | 구조·품질 기준 관리 | **작성·개선 책임** | **내용·재사용성 검토** |
+| Runbook / Knowledge | 관리 기준 제시 | **작성·최신화 책임** | **운영 적합성 검토** |
+| Eval | 공통 검증 기준 관리 | Domain Case 작성 | 결과·기준 충족 여부 검증 |
+| Production | Human Gate 및 승인 체계 관리 | 검증 증적 제공 | 변경·위험 검토 |
 
-팀장이 모든 Skill을 작성하는 구조가 아닙니다. 실제 업무를 가장 잘 아는 담당자가 경험을 Skill로 정리하고 PR을 통해 팀 자산으로 축적합니다.
+리더가 모든 Skill을 직접 작성하는 구조가 아닙니다. 실제 업무를 가장 잘 아는 담당자가 경험을 Skill로 정리하고, Reviewer가 변경의 품질과 안전성을 검증한 뒤 PR을 통해 팀 자산으로 축적합니다.
+
+### 역할 정의 원칙
+
+- **리더**: Common Harness, Governance, Rule/Guardrail과 중요한 의사결정의 책임 주체
+- **담당자**: 각 Domain의 Skill, Knowledge, Runbook을 작성하고 최신 상태로 유지하는 실행 주체
+- **Reviewer**: 담당자가 만든 변경을 독립적으로 검토하여 기술·품질·보안·운영 기준 충족 여부를 확인하는 검증 주체
 
 ---
 
@@ -250,7 +256,7 @@ skill/<topic> Branch
       ↓
 Pull Request
       ↓
-Domain Owner Review
+Reviewer Review
       ↓
 Eval
       ↓
@@ -259,7 +265,7 @@ main Merge
 다음 업무부터 AI가 재사용
 ```
 
-Skill도 Source Code와 동일하게 **Owner, Review, Version, Evaluation**을 갖는 팀 자산으로 관리합니다.
+Skill도 Source Code와 동일하게 **담당자, Reviewer, Version, Evaluation**을 갖는 팀 자산으로 관리합니다.
 
 ---
 
