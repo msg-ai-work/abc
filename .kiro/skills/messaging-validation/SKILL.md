@@ -2,7 +2,8 @@
 name: messaging-validation
 description: 기업메시징 동작을 검증하고 재현 가능한 테스트 보고서를 작성한다. 구현 완료 후 또는 신뢰성, 호환성, 성능 위험을 평가할 때 사용한다.
 metadata:
-  owner: quality
+  responsible-role: 리더
+  reviewer-role: Reviewer
   version: "1.0"
 ---
 
