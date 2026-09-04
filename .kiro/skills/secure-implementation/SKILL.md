@@ -2,7 +2,8 @@
 name: secure-implementation
 description: 사람이 승인한 Java/Spring 기업메시징 구현 계획을 최소 변경 범위, 안전한 기본값, 재현 가능한 증적 원칙에 따라 구현한다.
 metadata:
-  owner: engineering
+  responsible-role: 리더
+  reviewer-role: Reviewer
   version: "1.0"
 ---
 
