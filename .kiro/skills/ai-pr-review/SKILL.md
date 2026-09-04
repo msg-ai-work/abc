@@ -2,7 +2,8 @@
 name: ai-pr-review
 description: 기업메시징 변경사항의 정확성, 보안, 신뢰성, 승인 범위 준수 여부를 독립적으로 1차 PR 리뷰한다.
 metadata:
-  owner: engineering-governance
+  responsible-role: 리더
+  reviewer-role: Reviewer
   version: "1.0"
 ---
 
