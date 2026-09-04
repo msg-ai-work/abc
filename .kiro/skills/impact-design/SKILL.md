@@ -2,7 +2,8 @@
 name: impact-design
 description: 승인된 메시징 요구사항을 분석하여 영향분석과 파일 단위 구현 계획을 작성한다. 애플리케이션 코드, 계약, 스키마, 인프라를 변경하기 전에 사용한다.
 metadata:
-  owner: architecture
+  responsible-role: 리더
+  reviewer-role: Reviewer
   version: "1.0"
 ---
 
